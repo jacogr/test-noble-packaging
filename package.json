@@ -1,0 +1,24 @@
+{
+  "name": "packaging-test",
+  "version": "1.0.0",
+  "license": "MIT",
+  "source": "src/index.esm.js",
+  "main": "dist/parcel.js",
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "parcel": "^2.0.1",
+    "webpack": "^5.65.0",
+    "webpack-cli": "^4.9.1"
+  },
+  "scripts": {
+    "build:browserify": "browserify src/index.cjs.js -o dist/browserify.js",
+    "build:parcel": "parcel build",
+    "build:webpack": "webpack",
+    "test:browserify": "yarn build:browserify && node ./dist/browserify.js",
+    "test:parcel": "yarn build:parcel && node ./dist/parcel.js"
+  },
+  "dependencies": {
+    "@noble/hashes": "^0.4.4",
+    "@noble/secp256k1": "^1.3.2"
+  }
+}
